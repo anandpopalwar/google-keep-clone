@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: rgb(25,114,254);
+    background: linear-gradient(90deg, rgba(25,114,254,0.3757878151260504) 0%, rgba(241,241,241,1) 100%);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: #FFFDE3; */
+}
+.sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid dodgerblue;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px;
+    /* max-width: 500px; */
+    min-width: 400px;
+    box-sizing: border-box;
+    /* background: #EEF2E6; */
+    box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+    inset 1px 1px 5px rgba(255, 255, 255, 0525),
+    8px 30px 30px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 30px 0;
+}
+
+
+
+.usertask {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 30px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.usertaskdesc {
+    width: 100%;
+    height: 105px;
+    margin-bottom: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 5px;
+    resize: both;
+}
+
+.usertask:focus {
+    outline: none;
+    border: 1px solid dodgerblue;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.usertaskdesc:focus {
+    outline: none;
+    border: 1px solid dodgerblue;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.addbtn {
+    width: 110px;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    /* background: lightgrey; */
+    transform: scale(0.8);
+    margin-top: 5px;
+    transition: all 0.3s linear;
+    box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+    inset 1px 1px 5px rgba(255, 255, 255, 0.25),
+    8px 30px 30px rgba(0, 0, 0, 0.4);
+    
+}
+
+.addbtn:hover {
+    /* background: grey; */
+    border: 1px solid dodgerblue;
+}
+
+.msg {
+    display: none;
+}
+
+.alert {
+    /* object-fit: contain; */
+    visibility: hidden;
+}
+
+.alert-1 {
+    color: red;
+    background: rgb(242, 201, 201);
+    /* width: fit-content; */
+    /* object-fit: contain; */
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.alert-2 {
+    color: green;
+    background: rgb(208, 230, 208);
+    /* width: fit-content; */
+    /* object-fit: contain; */
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+/* for created division  */
+/* .newdiv{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0 ;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 20px;
+} */
+
+/* .parentclass{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid dodgerblue;
+    padding: 10px;
+    align-items: center;
+    border-radius: 8px;
+    place-content: center;
+    position: relative;
+    top: 400px;
+}
+
+.parentclass h3{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+p{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 18px;
+} */
+
+
+.outer-card{
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.inner-card{
+    /* background: #EEF2E6; */
+    box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+    inset 1px 1px 5px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+    /* width: 300px; */
+    height: auto;
+    border:1px solid #ccc;
+    padding:10px;
+    border-radius:12px;
+    display:flex;
+    justify-content: space-between;
+    margin:5px 10px;
+    gap: 30px   ;
+}
+.gen-task-name{
+    font-size: 16px;
+    font-weight: 500;
+}
+.gen-descript{
+    font-size: 16px;
+    color: #333;
+}
+.usertaskdesc{
+    resize: none;
+}
