@@ -14,13 +14,18 @@
             <textarea name="" id="noteData" cols="30" rows="10" class="input" placeholder="take a note"></textarea>
             <div class="header_footer">
                 <!-- <div></div> -->
-                <button onclick="submit()">add</button>
+                <button class="cancelbtn" onclick="cancel()"> cancel</button>
+                <p id="alertHandler"> </p>
+                <button class="submitbtn" onclick="submit()">add</button>
+
             </div>
         </div>
     </div>
 
     <div class="buttonDiv"  >
         <button  onclick="addnote()"> + </button>
+        
+        
         <!-- <button ondblclick="addnote()">addnote </button> -->
     </div>
 
