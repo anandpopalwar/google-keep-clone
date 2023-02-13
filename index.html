@@ -8,27 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container d-none" id="inputContainer">
+    <h3 class="authername">created and designed by anand</h3>
+    <p  class="alertHandler d-none" id="alertHandler">alertHandler template</p>
+  
+      <div class="container d-none" id="inputContainer">
         <div class="header">
             <input type="text" class="input" id="noteTitle" placeholder="title">
             <textarea name="" id="noteData" cols="30" rows="10" class="input" placeholder="take a note"></textarea>
             <div class="header_footer">
                 <!-- <div></div> -->
                 <button class="cancelbtn" onclick="cancel()"> cancel</button>
-                <p id="alertHandler"> </p>
                 <button class="submitbtn" onclick="submit()">add</button>
-
             </div>
         </div>
     </div>
-
-    <div class="buttonDiv"  >
-        <button  onclick="addnote()"> + </button>
-        
-        
-        <!-- <button ondblclick="addnote()">addnote </button> -->
+    
+    <div class="buttonDiv" >
+        <button  onclick="addnote()"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>.
+               </svg>
+        </button>
     </div>
-
+    
     <div class="notesContainer" >
         <!-- <div class="note">
             <h3>dinner</h3>

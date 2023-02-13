@@ -4,13 +4,15 @@ const noteArray = [
     { title: "lunch", data: 'burger at afteernoon at ramesh restoraunt with colle' },
     { title: "moem, ipsuood", data: 'em, ipsum dolor sit amet consectetur adipisicing elit. Doloremque cons' },
     // {title : "sddvasvsa",data:'food vm Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus blanditiis consequatur unde et distinctio, ut optio tenetur nulla animi, eveniet sit nam temporibus quod nemo provident facere doloribus quibusdam vero inventore a idrem ipsum dolor sit, amet consectetur adipisicing eliorues'},
-
+    
 ]
 console.log(noteArray[0])
 let inputContainer = document.getElementById('inputContainer')
 
 let alertHandler = document.getElementById('alertHandler')
 alertHandler.innerHTML=''
+
+
 
 let a = document.getElementById('noteData');
 let b = document.getElementById('noteTitle');
@@ -59,13 +61,26 @@ function submit() {
         console.log("title:", noteSubArray.title)
         console.log("data:", noteSubArray.data)
         inputClean()
+        alertHandler.innerHTML = "note added successfully"
+        setTimeout(() => {
+            alertHandler.classList.toggle('d-none')
+            alertHandler.classList.toggle('tran')
+            
+            }, 2000);
         // })
         // creating notes data 
 
     } else {
         console.log('invalid input')
-        alertHandler.innerHTML = "empty note can't stored"
+        alertHandler.innerHTML = "empty note can't be added press cancel"
+        alertHandler.classList.toggle('d-none')
+        alertHandler.classList.toggle('tran')
 
+        setTimeout(() => {
+        alertHandler.classList.toggle('d-none')
+        alertHandler.classList.toggle('tran')
+        
+        }, 2000);
         // inputClean()
     }
 }
@@ -121,6 +136,8 @@ function addnote() {
 function cancel() {
     inputClean()
 alertHandler.innerHTML=""
+alertHandler.classList.toggle('d-none')
+alertHandler.classList.toggle('tran')
     
     inputContainer.classList.toggle('d-none')
     inputContainer.classList.toggle('tran')
@@ -130,6 +147,8 @@ alertHandler.innerHTML=""
 function inputClean() {
     a.value = null;
     b.value = null;
+    alertHandler.classList.toggle('d-none')
+    alertHandler.classList.toggle('tran')
 }
 
 
