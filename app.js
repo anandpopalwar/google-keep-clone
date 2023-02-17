@@ -1,16 +1,26 @@
-const noteArray = [
-    { title: "morning food", data: 'food at moring with 1000 calorues' },
-    { title: "dinner", data: 'pizzza at night at royak oak restoraunt with friendss' },
-    { title: "lunch", data: 'burger at afteernoon at ramesh restoraunt with colle' },
-    { title: "moem, ipsuood", data: 'em, ipsum dolor sit amet consectetur adipisicing elit. Doloremque cons' },
-    // {title : "sddvasvsa",data:'food vm Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus blanditiis consequatur unde et distinctio, ut optio tenetur nulla animi, eveniet sit nam temporibus quod nemo provident facere doloribus quibusdam vero inventore a idrem ipsum dolor sit, amet consectetur adipisicing eliorues'},
-    
-]
-console.log(noteArray[0])
-let inputContainer = document.getElementById('inputContainer')
+// const noteArray = [
+//     // { title: "Welcome to notes", data: 'start taking notes , easy to manage notes ' },
+//     // {title : "sddvasvsa",data:'food vm Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus blanditiis consequatur unde et distinctio, ut optio tenetur nulla animi, eveniet sit nam temporibus quod nemo provident facere doloribus quibusdam vero inventore a idrem ipsum dolor sit, amet consectetur adipisicing eliorues'},
+// ]
 
+
+
+// Convert the array to a string and store it in localStorage
+const noteArray = JSON.parse(localStorage.getItem('noteArray')) || [];
+
+// var noteSubArray = { title: "Welcome to notes", data: 'start taking notes , easy to manage notes ' };
+
+// noteArray.push(noteSubArray)
+
+
+
+
+console.log(noteArray)
+
+
+let inputContainer = document.getElementById('inputContainer')
 let alertHandler = document.getElementById('alertHandler')
-alertHandler.innerHTML=''
+alertHandler.innerHTML = ''
 
 
 
@@ -38,15 +48,16 @@ function submit() {
         console.log(noteSubArray)
         noteArray.push(noteSubArray)
         console.log(noteArray)
+        localStorage.setItem('noteArray', JSON.stringify(noteArray));
 
+        //declaring variables 
         let notesContainer = document.querySelector('.notesContainer');
         let notesDiv = document.createElement('div')
         let noteHeading = document.createElement('h3')
         let noteContent = document.createElement('p')
 
 
-        // noteArray.map(()=>{
-
+        noteArray.map(()=>{
         notesContainer.appendChild(notesDiv)
         notesDiv.classList.add('note');
         notesDiv.classList.add('animateNote');
@@ -62,14 +73,24 @@ function submit() {
         console.log("data:", noteSubArray.data)
         inputClean()
         alertHandler.innerHTML = "note added successfully"
+        notesDiv.addEventListener('click', (() => {
+            let noteCardHandler = document.getElementById('noteCardHandler')
+            let noteCardHandlerTitle = document.getElementById('noteCardHandlerTitle')
+            let noteCardHandlerData = document.getElementById('noteCardHandlerData')
+            noteCardHandler.classList.toggle('display-none')
+            noteCardHandler.classList.toggle('tran')
+            
+            noteCardHandlerTitle.innerHTML = noteSubArray.title;
+            noteCardHandlerData.innerHTML = noteSubArray.data;
+    
+        }))
         setTimeout(() => {
             alertHandler.classList.toggle('d-none')
             alertHandler.classList.toggle('tran')
-            
-            }, 2000);
-        // })
-        // creating notes data 
 
+        }, 2000);
+        })
+      
     } else {
         console.log('invalid input')
         alertHandler.innerHTML = "empty note can't be added press cancel"
@@ -77,31 +98,42 @@ function submit() {
         alertHandler.classList.toggle('tran')
 
         setTimeout(() => {
-        alertHandler.classList.toggle('d-none')
-        alertHandler.classList.toggle('tran')
-        
-        }, 2000);
-        // inputClean()
+            alertHandler.classList.toggle('d-none')
+            alertHandler.classList.toggle('tran')
+
+        }, 2500);
     }
 }
-noteArray.forEach((x) => {
 
-    //    const  noteArray =  []
+// const retrievedNoteArray = JSON.parse(localStorage.getItem('noteArray'));
 
+
+noteArray.map((x) => {
 
     let notesContainer = document.querySelector('.notesContainer');
-    let notesDiv = document.createElement('div')
+    var notesDiv = document.createElement('div')
     let noteHeading = document.createElement('h3')
     let noteContent = document.createElement('p')
 
+    // let btnContainer = document.createElement('div')
+    // let buttonedit = document.createElement('button')
+    // let buttonPin = document.createElement('button')
+    // let buttonOpen = document.createElement('button')
+    // notesDiv.appendChild(btnContainer)
+    
+    
     notesContainer.appendChild(notesDiv)
     notesDiv.classList.add('note');
     notesDiv.classList.add('animateNote');
-
-
+    
     notesDiv.appendChild(noteHeading)
     notesDiv.appendChild(noteContent)
-
+    
+    // btnContainer.classList.add('btnContainer')
+    // btnContainer.appendChild(buttonedit)
+    // btnContainer.appendChild(buttonPin)
+    // btnContainer.appendChild(buttonOpen)
+    
     noteHeading.innerHTML = x.title;
     noteContent.innerHTML = x.data;
     noteData.value = '';
@@ -109,14 +141,44 @@ noteArray.forEach((x) => {
     console.log("title:", x.title)
     console.log("data:", x.data)
 
+    
+    notesDiv.addEventListener('click', (() => {
+        let noteCardHandler = document.getElementById('noteCardHandler')
+        let noteCardHandlerTitle = document.getElementById('noteCardHandlerTitle')
+        let noteCardHandlerData = document.getElementById('noteCardHandlerData')
+        
+        // let buttonedit = document.createElement('button')
+        // let buttonedit = document.createElement('button')
+        // noteCardHandler.appendChild(btnContainer)
+        noteCardHandler.classList.toggle('display-none')
+        noteCardHandler.classList.toggle('tran')
+        
+        noteCardHandlerTitle.innerHTML = x.title;
+        noteCardHandlerData.innerHTML = x.data;
+        
 
-    // return {noteHeading,noteContent,notesContainer}
+    }))
 })
 
 
 // noteArray.map((e)=>{
 //     console.log(e)
 // })
+
+// var addnot = document.getElementById('addnote')
+// addnot.addEventListener('keypress',((e)=>{
+//     if(e.keyCode == 32){
+//         addnote()
+//     }
+// }))
+
+
+// onkeydown="(e)=>{
+//     if(e.keyCode == 32){
+//         // addnote()
+//         console.log('ok')
+//     }
+// }"
 
 function addnote() {
     // if (inputContainer.classList.contains("d-none")) {
@@ -135,10 +197,10 @@ function addnote() {
 
 function cancel() {
     inputClean()
-alertHandler.innerHTML=""
-alertHandler.classList.toggle('d-none')
-alertHandler.classList.toggle('tran')
-    
+    alertHandler.innerHTML = ""
+    alertHandler.classList.toggle('d-none')
+    alertHandler.classList.toggle('tran')
+
     inputContainer.classList.toggle('d-none')
     inputContainer.classList.toggle('tran')
 
@@ -153,8 +215,6 @@ function inputClean() {
 
 
 
+
 // noteContainer.classList.remove('tran')
-
-
-
 

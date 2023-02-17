@@ -1,15 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-.authername{
-    color: rgba(255, 255, 255, 0.386);
+
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 400px;
 }
+ 
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #333333;
+    min-height: 400px;
+    /* -webkit-box-shadow: inset 0 0 6px rgb(219, 43, 43); #c80000 */
+}
+
+
+.authername {
+    color: rgba(255, 255, 255, 0.386);
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    /* position: absolute;
+    
+    bottom: 0; */
+    /* display: grid; */
+
+}
+
 * {
     font-family: 'DM Sans', sans-serif;
     color: white;
-    margin: 0 ;
+    margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background-color: #212125;
     position: relative;
     display: grid;
@@ -17,21 +48,22 @@ body{
     /* width: initial;
     height:initial; */
 }
+
 .header {
     /* border: 1px solid; */
     /* width: 400px; */
     box-sizing: border-box;
-    width:100%;
+    width: 100%;
 }
 
 .container {
     width: 450px;
-    margin: 2px ;
+    margin: 2px;
     padding: 5px;
     border-radius: 10px;
     background-color: rgb(200, 0, 0);
     position: fixed;
-    bottom:40px;
+    bottom: 40px;
     right: 40px;
     /* transform: translate(-50%,-50%); */
     /* position: absolute; */
@@ -40,68 +72,77 @@ body{
     justify-content: center; */
     z-index: 1;
 }
-.d-none{
+
+.d-none {
     display: none;
     width: 0;
 }
-.tran{
- animation: show .7s ease-in-out ;
-/* transition: 3s ease-in-out; */
+
+.tran {
+    animation: show .5s ease-in-out;
+    /* transition: 3s ease-in-out; */
 }
+
 @keyframes show {
-    0%{
+    0% {
         /* transform: translateY(-20px); */
         opacity: 0;
 
     }
-    50%{
+
+    50% {
         /* transform: rotate(-100px); */
         /* transform: translateY(20px); */
         opacity: .5;
     }
-    100%{
+
+    100% {
         /* transform: rotate(100px); */
         transform: translate(0px);
 
         opacity: 1;
-    } 
+    }
 }
 
-.animateNote{
- animation: animateNote .7s ease-in-out ;
+.animateNote {
+    animation: animateNote .7s ease-in-out;
 }
+
 @keyframes animateNote {
-    0%{
+    0% {
         /* transform: translateY(-20px); */
         /* width: 50px; */
         opacity: 0;
     }
-    50%{
+
+    50% {
         /* transform: rotate(-100px); */
         /* transform: translateY(20px); */
         opacity: .5;
     }
-    100%{
+
+    100% {
         /* transform: rotate(100px); */
         transform: translate(0px);
         /* width: initial; */
         opacity: 1;
-    }    
+    }
 }
 
-.buttonDiv{
+.buttonDiv {
     position: fixed;
     bottom: 50px;
-    right:  50px;
+    right: 50px;
 }
-.buttonDiv button{
+
+.buttonDiv button {
     border-radius: 50%;
     width: 80px;
-    height:80px;
+    height: 80px;
     font-size: 50px;
 }
 
-input{
+input {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -123,7 +164,7 @@ textarea {
     background-color: #212125;
     margin: 0 auto;
     width: 100%;
-    
+
     border-radius: 0 0 8px 8px;
     border-top: 0;
     outline: none;
@@ -132,54 +173,62 @@ textarea {
 
 .input {
     padding: 5px 10px;
-    
+
 }
 
 .notesContainer {
     padding: 10px;
     min-width: 600px;
 
-    margin:0 auto;
+    margin: 0 auto;
     border-radius: 10px;
-   display: grid;
-   grid-template-columns: repeat(3,300px);
-   gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 8px;
 
 }
-::-webkit-input-placeholder{
-    color:rgb(181, 181, 181);
+
+::-webkit-input-placeholder {
+    color: rgb(181, 181, 181);
     font-family: 'DM Sans', sans-serif;
 }
-button{
-    background-color:rgb(0, 0, 0);
+
+button {
+    background-color: rgb(0, 0, 0);
     color: white;
-    padding:5px 25px;
+    padding: 5px 25px;
     font-size: 15px;
     cursor: pointer;
     border-radius: 8px;
     border-color: transparent;
 }
-button:hover{
+
+button:hover {
     background-color: rgb(91, 91, 91);
     border-color: #00000000;
 }
+
 .note {
     padding: 10px;
     border: 2px solid rgb(133, 133, 133);
     border-radius: 8px;
     overflow-y: auto;
+    cursor: pointer;
+    background-color:  #212125;
 }
 
-.header_footer{
+.header_footer {
     /* display: flex;
     justify-content: space-between; */
     opacity: 1;
 }
-.header_footer button{
-    width: 100px ;
+
+.header_footer button {
+    width: 100px;
 }
+
 .header_footer {
-    
+
     display: flex;
     justify-content: space-between;
 }
@@ -211,18 +260,9 @@ h6 {
 .note p {
     margin: 5px;
     color: rgb(194, 194, 194);
-    min-height: 50px;
-    /* word-wrap: break-word; */
-    /* overflow:visible; */
-
-    /* white-space: nowrap;  */
-    /* width: 50px;  */
-    /* overflow: hidden;
-    text-overflow: ellipsis;  */
-
-}
-.note h3{
-    /* overflow-x:hidden; */
+    height: 30px;
+    word-wrap: break-word;
+    overflow:visible;
 
     white-space: nowrap; 
     /* width: 50px;  */
@@ -231,125 +271,37 @@ h6 {
 
 }
 
-@media screen and (max-width:650px) {
-    .notesContainer{
-        /* width: 300px; */
-        /* background-color: red; */
-        min-width:300px;
-    /* height: 400px; */
-    
-        grid-template-columns: repeat(2,250px);
-        gap: 8px;
-        padding: 10px;
-    }
-    .note{
-        /* width: 200px; */
-        margin: 0px;
-        
-    }
-    .container{
-        width: 400px;
-       /* height: 150px; */
-    }
-    
-}
+.note h3 {
+    /* overflow-x:hidden; */
 
+    white-space: nowrap;
+    /* width: 50px;  */
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-@media screen and (max-width:992px){
-    .notesContainer{
-        /* width: 300px; */
-        /* background-color: red; */
-        min-width:300px;
-    /* height: 400px; */
-    
-        grid-template-columns: repeat(3,250px);
-        gap: 8px;
-        padding: 10px;
-        /* background-color: blue; */
-    }
-    .note{
-        /* width: 200px; */
-        margin: 0px;
-        
-    }
-    .container{
-        width: 400px;
-       /* height: 150px; */
-    }
-    
-}
-@media screen and (max-width:768px){
-    .notesContainer{
-        /* width: 300px; */
-        /* background-color: red; */
-        min-width:300px;
-    /* height: 400px; */
-    
-        grid-template-columns: repeat(3,180px);
-        gap: 6px;
-        padding: 6px;
-        /* background-color: rgb(238, 0, 255); */
-    }
-    .note{
-        /* width: 200px; */
-        margin: 0px;
-        
-    }
-    .container{
-        width: 400px;
-       /* height: 150px; */
-    }
-    
-}
-
-@media screen and (max-width:576px){
-    .notesContainer{
-        /* width: 300px; */
-        /* background-color: red; */
-        min-width:300px;
-    /* height: 400px; */
-    
-        grid-template-columns: repeat(2,150px);
-        gap: 3px;
-        padding: 3px;
-        /* background-color: rgb(255, 247, 0); */
-    }
-    .note{
-        /* width: 200px; */
-        margin: 0px;   
-        padding: 5px;
-    border: 2px solid rgb(133, 133, 133);
-        
-    }
-    p{
-        font-size: 12px;
-    }
-    h3{
-        font-size: 15px;
-    }
-
-    .container{
-        /* width: 100%; */
-        width: 350px;
-        /* height: 300px; */
-        margin: 1px ;
-        padding: 3px;
-        border-radius: 5px;
-        background-color: rgb(200, 0, 0);
-        position: fixed;
-        bottom:30px;
-        right: 0px;
-       /* height: 150px; */
-    }
-    textarea{
-        height: 150px;
-    }
-
-    
 }
 
 
 
+.noteCardPage {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.notebtnContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.notesbtn{
+  width: 0px;
+  background-color: transparent;
+
+}
 
 
 
@@ -357,21 +309,196 @@ h6 {
 /* body::-webkit-scrollbar */
 
 
-.alertHandler{
+.alertHandler {
     text-align: center;
     /* height: 20px; */
     box-sizing: border-box;
     justify-self: center;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.307);
-    color: rgb(255, 255, 255);
+    background-color: rgb(220, 220, 220);
+    color: rgb(0, 0, 0);
     padding: 5px 20px;
     border-radius: 50px;
     /* margin-top: 30px; */
-    position:absolute;
+    position: fixed;
+    top: 5px;
     /* top: 10px;
     left: 50%;
     transform: translate(-50%,-50%); */
     place-items: center;
+}
+
+
+
+.noteCardHandler {
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgb(133, 133, 133);
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 50px 200px 50px;
+    position: fixed;
+    bottom:10px;
+    background-color:#212125;
+    /* position: absolute; */
+
+}
+
+.noteCardHandler p {
+    margin: 5px;
+    border-top: 2px solid rgb(133, 133, 133);
+    color: rgb(194, 194, 194);
+
+    padding-top: 10px;
+}
+
+#noteCardHandlerTitle {
+    height: 50px;
+    align-items: flex-start;
+
+}
+
+.btnContainer {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* align-self: flex-end; */
+    border-top: 2px solid rgb(133, 133, 133);
+
+}
+
+@media screen and (max-width:992px) {
+    .notesContainer {
+        /* width: 300px; */
+        /* background-color: red; */
+        min-width: 300px;
+        /* max-width: 800px; */
+        /* height: 400px; */
+
+        grid-template-columns: repeat(3, 240px);
+        gap: 8px;
+        padding: 10px;
+        /* background-color: blue; */
+    }
+
+    .note {
+        /* width: 200px; */
+        margin: 0px;
+
+    }
+
+    .container {
+        width: 400px;
+        /* height: 150px; */
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .notesContainer {
+        /* width: 300px; */
+        /* background-color: red; */
+        min-width: 300px;
+        /* height: 400px; */
+
+        grid-template-columns: repeat(3, 180px);
+        gap: 6px;
+        padding: 6px;
+        /* background-color: rgb(238, 0, 255); */
+    }
+
+    .note {
+        /* width: 200px; */
+        margin: 0px;
+        padding: 5px;
+
+    }
+
+    .container {
+        width: 400px;
+        /* height: 150px; */
+    }
+
+    
+
+}
+
+@media screen and (max-width:576px) {
+    .notesContainer {
+        /* width: 300px; */
+        /* background-color: red; */
+        min-width: 300px;
+        /* height: 400px; */
+
+        grid-template-columns: repeat(1, 300px);
+        gap: 3px;
+        padding: 3px;
+        /* background-color: rgb(255, 247, 0); */
+    }
+
+    .note {
+        /* width: 200px; */
+        margin: 0px;
+        padding: 5px;
+        border: 2px solid rgb(133, 133, 133);
+
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .container {
+        /* width: 100%; */
+        width: 300px;
+        /* height: 300px; */
+        margin: 1px;
+        padding: 3px;
+        border-radius: 5px;
+        background-color: rgb(200, 0, 0);
+        position: fixed;
+        bottom: 30px;
+        right: 0px;
+        /* height: 150px; */
+    }
+
+    .btnContainer {
+        padding-top: 5px;
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* width: 100%; */
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    .noteCardHandler {
+        width: 300px;
+        height: 235px;
+        display: grid;
+        grid-template-rows: 40px 150px 40px;
+        padding: 5px;
+        /* margin: 5px; */
+        /* background-color: red; */
+    }
+
+    #noteCardHandlerTitle {
+        /* padding: 5px; */
+        height: 30px;
+        margin-bottom: 2px solid rgba(133, 133, 133, 0);
+    }
+}
+
+
+
+.display-none {
+    display: none;
+    width: 0;
 }
